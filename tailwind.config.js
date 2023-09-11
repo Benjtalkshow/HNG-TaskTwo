@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'custom-dark-Red-Color': '#be123c', 
+        'custom-dark-Red-Color': '#be123c',
         'custom-black': '#000000',
         'custom-white': '#ffffff',
         'custom-bg-OffWhite': '#faf5f7',
@@ -14,6 +14,13 @@ module.exports = {
         'custom-dark-Grey': '#333333',
         'custom-charcoal-Grey': '#404040',
         'custome-vibrant-Red': '#BE123C',
+      },
+      screens: {
+        'xs': '320px',
+        'sm': '480px',
+        'md': '768px',
+        'lg': '976px',
+        'xl': '1440px',
       },
     },
   },
