@@ -13,17 +13,18 @@ body {
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+/* for header section */
+
 @media screen and (max-width: 768px) {
   .searchbar {
     width: 90%;
     position: absolute;
-    top: 7rem;
+    top: 6rem;
   }
 }
 
-.nav {
-  @apply md:w-[50px];
-}
 .nav .logoImage {
   @apply md:h-[4rem] md:w-[4rem];
 }
+
+/* for hero section */
