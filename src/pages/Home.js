@@ -1,7 +1,7 @@
-import "../../App.css";
-import Header from "./Header";
-import Hero from "./Hero";
-import logo from "../../assets/images/logo.png";
+import "../App.css";
+import Header from "../Components/HomePage/Header";
+import Hero from "../Components/HomePage/Hero";
+import logo from "../assets/images/logo.png";
 
 function Home() {
   return (
