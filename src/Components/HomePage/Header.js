@@ -6,8 +6,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 function Header(props) {
   return (
     // this section is for navbar
-    <header className="header z-10">
-      <nav className="nav flex items-center justify-around py-5 bg-transparent absolute w-full">
+    <header className="header">
+      <nav className="nav flex items-center justify-around py-5 bg-transparent absolute w-full z-10">
         {/* nav logo */}
         <div className="logo flex justify-center items-center gap-x-2 md:gap-x-5">
           <img
@@ -22,16 +22,16 @@ function Header(props) {
 
         {/* nav searchbar */}
         
-        <div className="searchbar shadow-lg px-2 flex justify-center items-center w-[500px] rounded-md border-2 border-white bg-transparent">
+        <div className="searchbar shadow-md px-2 flex justify-center items-center w-[500px] rounded-md border-2 border-white bg-transparent">
           <input
             type="text"
-            className="outline-none py-2 w-[90%] text-sm text-white bg-transparent"
+            className="outline-none py-2 w-[90%] text-sm text-white bg-transparent placeholder:text-white"
             placeholder={props.inputPlaceholder}
           />
           <FontAwesomeIcon icon={faSearch} className="px-3 text-white" />
         </div>
 
-        {/* nav sign */}
+        {/* nav sign in */}
 
         <div className="signAndhamburger flex items-center justify-center gap-x-2 md:gap-x-5 rounded-md">
           <a

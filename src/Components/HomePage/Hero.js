@@ -20,7 +20,7 @@ function Hero() {
               api_key: "7f23fe1838341209abe18781249c152f",
               language: "en-US",
               sort_by: "popularity.desc",
-              page: 1,
+              page: 2,
             },
           }
         );
@@ -39,7 +39,7 @@ function Hero() {
     fetchMovies();
   }, []);
 
-  // random movies posters, ratings and description
+  // random movie posters, ratings and description
 
   const selectRandomMovie = (movieList) => {
     const randomIndex = Math.floor(Math.random() * movieList.length);
@@ -54,13 +54,15 @@ function Hero() {
       {randomMovie ? (
         <div
           // movie poster
-          className="hero-section w-full h-[100vh] bg-no-repeat bg-cover bg-center"
+          className="hero-section w-full h-[100vh] bg-no-repeat bg-cover bg-center relative"
           style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/original/${randomMovie.poster_path})`,
           }}
         >
+            <div className="absolute inset-0 bg-black opacity-40"></div>
+
           {/* movie title */}
-          <div className="movieDetail py-[15rem] px-4 lg:px-[8rem]">
+          <div className="movieDetail absolute inset-0 py-[15rem] px-4 lg:px-[8rem]">
             <h1 className="movieTitle drop-shadow-7xl text-white font-bold text-lg md:text-5xl leading-[1.2]">
               {randomMovie.title}
             </h1>
@@ -69,7 +71,7 @@ function Hero() {
               <div className="rating1 flex gap-x-2 items-center">
                 <img className="imdbLogo h-5" src={imdbLogo} alt="imdb logo" />
                 <p className="rate drop-shadow-2xl text-white md:text-xl">
-                  {randomMovie.vote_average}
+                  {randomMovie.popularity}
                 </p>
               </div>
               <div className="rating2 flex gap-x-2 items-center">
@@ -79,7 +81,7 @@ function Hero() {
                   alt="orange logo"
                 />
                 <p className="rate drop-shadow-2xl text-white md:text-xl">
-                  {randomMovie.vote_count}
+                  {randomMovie.vote_average}%
                 </p>
               </div>
             </div>

@@ -1,130 +1,93 @@
+//featured component//
+
+ import "../../App.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import imdbLogo from "../../assets/images/imbd.png";
+import orangeLogo from "../../assets/images/orange.png";
 
 
-import React from 'react';
-import '../../App.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import bgImage from '../../assets/images/poster.png';
-import imdbLogo from '../../assets/images/imbd.png';
-import orangeLogo from '../../assets/images/orange.png';
-import playBtn from '../../assets/images/play.png';
+function Featured() {
+  const handleSeeMoreClick = () => {
+    alert("See More!!");
+  };
 
-function Hero() {
-  const [movies, setMovies] = useState([]);
-
+  // fetching movies from imdb API for each card
+  const [cards, setCards] = useState([]);
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchCard = async () => {
       try {
         const response = await axios.get(
-          'https://api.themoviedb.org/3/discover/movie',
+          "https://api.themoviedb.org/3/movie/top_rated",
           {
             params: {
-              api_key: '7f23fe1838341209abe18781249c152f',
-              language: 'en-US',
-              sort_by: 'popularity.desc',
+              api_key: "7f23fe1838341209abe18781249c152f",
+              language: "en-US",
               page: 1,
             },
           }
         );
-        console.log(response.data.results);
-        setMovies(response.data.results);
+        setCards(response.data.results.slice(0, 10));
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchMovies();
+    fetchCard();
   }, []);
 
-
   return (
-    <div>
-      <Carousel       
-      showThumbs={false}
-        showStatus={false}
-        showIndicators={false} 
-        showArrows={false}
-        infiniteLoop={true}
-        autoPlay={true}
-        interval={3000}
-        > 
-
-
-        {movies.map((movie) => (
-          <div key={movie.id} className="hero-section w-full h-[100vh]  -z-10  bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
-      <div className="movieDetail">
-        <h1 className="movieTitle text-white font-bold">{movie.title}</h1>
-        <div className="rating flex">
-          <div className="rating1 flex gap-x-2">
-            <img className="imdbLogo h-2" src={imdbLogo} alt="imdb logo" />
-            <p className="rate text-white">{movie.vote_count}</p>
-          </div>
-          <div className="rating2 flex gap-x-2">
-            <img className="orangeLogo" src={orangeLogo} alt="orange logo" />
-            <p className="rate text-white">{movie.vote_average}%</p>
-          </div>
+    // featured section
+    <div className="featured px-[10rem] my-10 w-full">
+        {/* featured text and see more button */}
+      <div className="featuredText w-full flex justify-between mb-5">
+        <h1 className="featuredMovie text-black text-4xl font-bold">
+          Featured Movie
+        </h1>
+        <div
+          className="seeMoreDiv flex items-center gap-3 cursor-pointer"
+          onClick={handleSeeMoreClick}
+        >
+          <p className="seeMore text-custom-dark-Red-Color text-lg">See more</p>
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            className="text-custom-dark-Red-Color"
+          />
         </div>
-        <div className="movieDescription text-white">
-          <p className=" text-ellipsis whitespace-nowrap">
-            {movie.overview}
-            {/* John Wick is on the run after killing a member <br/>of the international assassins'
-          guild, and with a <br/> $14 million price tag on his head, he is the target <br/> of hit
-          men and women everywhere. */}
-          </p>
-        </div>
-        <button className='watchTrailerBtn text-white md:text-xl flex p-4 gap-x-3 items-center my-5 bg-custom-dark-Red-Color rounded-lg'> 
-        <img className="watchTrailer w-5 h-5" src={playBtn} alt='watch trailer' />
-            WATCH TRAILER
-            </button>
       </div>
-    </div>
-        ))}
-    </Carousel>
+      {/* card grids */}
+      <div className="cardContainer"></div>
+      { cards.map((card) => (
+        <div key={card.id}  className="card w-[300px]">
+            <img src={`https://image.tmdb.org/t/p/original/${card.poster_path}`} alt={card.title} className="w-full h-[400px]" />
+            <h1>{card.title}</h1>
+            <p>{card.release_date}</p>
+            <div className="rating flex justify-between my-5 items-center w-full">
+              <div className="rating1 flex gap-x-2 items-center">
+                <img className="imdbLogo h-5" src={imdbLogo} alt="imdb logo" />
+                <p className="rate drop-shadow-2xl md:text-xl">
+                  {card.popularity}
+                  {console.log(card)}
+                </p>
+              </div>
+              <div className="rating2 flex gap-x-2 items-center">
+                <img
+                  className="orangeLogo w-5 h-6"
+                  src={orangeLogo}
+                  alt="orange logo"
+                />
+                <p className="rate drop-shadow-2xl md:text-xl">
+                  {card.vote_average}%
+                </p>
+              </div>
+            </div>
+            <p className="genre"></p>
+        </div>
+      ))
+      }
     </div>
   );
 }
-
-export default Hero;
-
-
-
-
-
-    <div
-      className="hero-section w-full h-[100vh] bg-no-repeat bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      <div className="movieDetail py-[15rem] px-4 lg:px-[8rem]">
-        <h1 className="movieTitle text-white font-bold text-lg md:text-5xl leading-[1.2]">
-          John Wick 3: Parabellum
-        </h1>
-        <div className="rating flex gap-x-5 my-5">
-          <div className="rating1 flex gap-x-2">
-            <img className="imdbLogo h-5" src={imdbLogo} alt="imdb logo" />
-            <p className="rate text-white md:text-xl">86.0 / 100</p>
-          </div>
-          <div className="rating2 flex gap-x-2">
-            <img className="orangeLogo" src={orangeLogo} alt="orange logo" />
-            <p className="rate text-white md:text-xl">97%</p>
-          </div>
-        </div>
-        <div className="movieDescription text-white">
-          <p className="md:text-lg text-ellipsis whitespace-nowrap">
-            John Wick is on the run after killing a member <br />
-            of the international assassins' guild, and with a <br /> $14 million
-            price tag on his head, he is the target <br /> of hit men and women
-            everywhere.
-          </p>
-        </div>
-        <button className="watchTrailerBtn text-white md:text-xl flex p-4 gap-x-3 items-center my-5 bg-custom-dark-Red-Color rounded-lg">
-          <img
-            className="watchTrailer w-5 h-5"
-            src={playBtn}
-            alt="watch trailer"
-          />
-          WATCH TRAILER
-        </button>
-      </div>
-    </div>
+export default Featured;

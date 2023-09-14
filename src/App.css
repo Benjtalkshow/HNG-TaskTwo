@@ -10,12 +10,13 @@ html {
 }
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #faf5f7;
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /* for header section */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 897px) {
   .searchbar {
     width: 90%;
     position: absolute;
