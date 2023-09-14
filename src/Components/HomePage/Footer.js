@@ -7,14 +7,14 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
-    <div className="footer py-[5rem] mt-[2rem]">
-      <div className="flex justify-center gap-[4rem]">
+    <div className="footer py-[5rem] mt-[2rem] flex flex-col justify-center w-full">
+      <div className="flex flex-wrap justify-center gap-[4rem]">
         <FontAwesomeIcon icon={faFacebookSquare} className="text-2xl text-custom-dark-Grey" />
         <FontAwesomeIcon icon={faInstagram} className="text-2xl text-custom-dark-Grey" />
         <FontAwesomeIcon icon={faTwitter} className="text-2xl text-custom-dark-Grey" />
         <FontAwesomeIcon icon={faYoutube} className="text-2xl text-custom-dark-Grey" />
       </div>
-      <div className="footerLinks py-6 flex justify-center gap-[4rem] text-lg font-bold text-custom-dark-Grey">
+      <div className="footerLinks py-6 flex flex-wrap justify-center gap-[1rem] md:gap-[4rem] text-lg font-bold text-custom-dark-Grey">
         <a>Conditions of Use</a>
         <a>Privacy & Policy</a>
         <a>Press Room</a>
