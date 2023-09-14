@@ -64,7 +64,9 @@ function Featured() {
   }, []);
 
   return (
-    <div className="featured  my-10  w-[90%] mx-auto">
+    // featured section/cards section
+    <div className="featured  my-10 w-[90%] mx-auto">
+      {/* featured heading/seeMore */}
       <div className="featuredText flex justify-between mb-5">
         <h1 className="featuredMovie text-black text-xl lg:text-4xl font-bold">
           Featured Movie
@@ -80,8 +82,9 @@ function Featured() {
           />
         </div>
       </div>
+      {/* movie cards */}
       <div className="centerCardContainer flex justify-center items-center w-full">
-      <div className="cardContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="cardContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
       {cards.map((card) => (
         <div key={card.id} className="card cursor-pointer active:ring" onClick={() => (alert(card.id))}>
           <img
@@ -89,6 +92,7 @@ function Featured() {
             alt={card.title}
             className="w-[400px] h-[450px]"
           />
+          {/* movie card details */}
           <div className="cardDetail">
           <p className="releaseDate py-1 text-xs text-custom-grey font-bold">{new Date (card.release_date).toUTCString()}</p>
           <h1 className="movieTitle text-lg font-bold">{card.title}</h1>
