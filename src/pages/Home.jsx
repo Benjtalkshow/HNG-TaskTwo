@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import { HiMenuAlt4, HiSearch } from 'react-icons/hi'
 import playBtn from "../assets/play.png";
 import logo from "../assets/logo.png";
+import tomato from "../assets/tomato.png"
 
 
 
@@ -90,9 +91,15 @@ const Home = () => {
                 </nav>
                 <div className="text-white md:w-[40%] flex flex-col gap-3">
                     <h1 className='text-lg md:text-xl font-semibold'>John Wick 3 : <br /> Parabellum</h1>
+                    <div className='flex gap-x-3'>
                     <div className="flex gap-1 items-center">
                     <img src={imdb} className='w-[50px]' loading='lazy' />
                     <span className='text-[12px]'>74 / 100</span>
+                    </div>
+                    <div className="flex gap-1 items-center">
+                    <img src={tomato} className='w-[25px]' loading='lazy' />
+                    <span className='text-[12px]'>74%</span>
+                    </div>
                     </div>
                     <p className='text-[12px] md:text-md'>Super-assassin John Wick returns with a $14 million price tag on his head and an army of bounty-hunting killers on his trail. After killing a member of the shadowy international assassin's guild, the High Table, John Wick is excommunicado, but the world's most ruthless hit men and women await his every turn.</p>
             <button className="watchTrailerBtn shadow-md text-white flex p-4 gap-3 w-[40%] justify-center  items-center my-5 bg-[#be123c] rounded-lg">

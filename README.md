@@ -92,4 +92,4 @@ Contact me for future collaboration
 Live link
 ------------
 
-[https://hng10-task-two.netlify.app/](https://hng10-task-two.netlify.app/)
+[https://hng10-tast-two.vercel.app/](https://hng10-tast-two.vercel.app/)
