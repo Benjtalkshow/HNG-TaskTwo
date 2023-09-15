@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-image: url(https://images.cinemaexpress.com/uploads/user/imagelibrary/2019/5/17/original/john-wick-3-parabellum-movie-review-keanu-reeves.jpg);
+    background-size: cover;
+    background-position: center, center;
+    width: 100%;
+}
+
+
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 0.2rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    transition: .3s ease;
+    font-size: 14px;
+}
+
+.input::placeholder {
+    color: #fff;
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    border-color: rgba(234, 76, 137, 0.4);
+    border: 2px solid #fff;
+    background-color: transparent;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+    position: absolute;
+    right: 1rem;
+    fill: #fff;
+    width: 1.35rem;
+    height: 2rem;
+}
+
+
+/* Warning  */
+
+.warning {
+    width: 320px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    background: #F7C752;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px -3px #111;
+}
+
+.warning__icon {
+    width: 20px;
+    height: 20px;
+    transform: translateY(-2px);
+    margin-right: 8px;
+}
+
+.warning__icon path {
+    fill: #393A37;
+}
+
+.warning__title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #393A37;
+}
+
+.warning__close {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.warning__close path {
+    fill: #393A37;
+}
+
+footer svg {
+    width: 24px;
+    height: 27.43px;
+}
