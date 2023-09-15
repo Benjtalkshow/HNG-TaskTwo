@@ -3,6 +3,7 @@ import "../../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
+
 function Header(props) {
   return (
     // this section is for navbar

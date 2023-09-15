@@ -6,9 +6,6 @@ import imdbLogo from "../../assets/images/imbd.png";
 import orangeLogo from "../../assets/images/orange.png";
 
 function Featured() {
-  const handleSeeMoreClick = () => {
-    alert("See More!!");
-  };
   
   // State to store the top-rated movies
   const [cards, setCards] = useState([]);
@@ -72,9 +69,7 @@ function Featured() {
           Featured Movie
         </h1>
         <div
-          className="seeMoreDiv flex items-center gap-3 cursor-pointer"
-          onClick={handleSeeMoreClick}
-        >
+          className="seeMoreDiv flex items-center gap-3 cursor-pointer">
           <p className="seeMore text-custom-dark-Red-Color text-md lg:text-lg">See more</p>
           <FontAwesomeIcon
             icon={faChevronRight}
@@ -86,7 +81,7 @@ function Featured() {
       <div className="centerCardContainer flex justify-center items-center w-full">
       <div className="cardContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
       {cards.map((card) => (
-        <div key={card.id} className="card cursor-pointer active:ring" onClick={() => (alert(card.id))}>
+        <div key={card.id} className="card cursor-pointer active:ring">
           <img
             src={`https://image.tmdb.org/t/p/original/${card.poster_path}`}
             alt={card.title}

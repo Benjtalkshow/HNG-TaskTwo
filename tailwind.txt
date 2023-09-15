@@ -91,3 +91,52 @@ function Featured() {
   );
 }
 export default Featured;
+
+
+
+
+Viewmovies component code:
+
+  const links = [
+    { icon: HomeIcon, linkText: "Home" },
+    { icon: MovieIcon, linkText: "Movies" },
+    { icon: SeriesIcon, linkText: "TV Series" },
+    { icon: UpcomingIcon, linkText: "Upcoming" },
+  ];
+const logOutItem ={icon: HomeIcon, linkText: "Log Out"};
+
+
+        <div className="sidebar w-[15%] rounded-tr-[8%] border-l-3 border-custom-grey rounded-br-[10%] h-full flex flex-col items-center bg-white">
+          <div className="logo flex justify-center items-center my-10 gap-x-2 md:gap-x-5">
+            <img
+              className="logoImage h-[2.5rem] w-[2.5rem]"
+              src={props.logoSrc}
+              alt="moviebox logo"
+            />
+            <h1 className="logoText drop-shadow-2xl block text-xl md:text-2xl font-semibold">
+              {props.logoText}
+            </h1>
+          </div>
+          <ul className="flex flex-col gap-7">
+            {links.map((link, index) => (
+              <li key={index} className="flex gap-3 py-2">
+                <img src={link.icon} alt={link.linkText} />
+                <a href="/">{link.linkText}</a>
+              </li>
+            ))}
+          </ul>
+          <div className="notice_Board bg-red-200 flex flex-col justify-center border-2 border-custom-dark-Red-Color rounded-xl py-5 px-2 my-10">
+            <p>
+              Play movie quizes and <br/>earn free tickes
+            </p>
+            <p className="text-sm text-custom-dark-Grey pb-4">
+              50k people are <br /> playing now
+            </p>
+            <button className="bg-red-300 text-custom-dark-Red-Color text-sm font-bold px-5 py-2 rounded-xl m-auto">Start playing</button>
+          </div>
+          <div>
+              <li className="list-none flex gap-3"><img src={logOutItem.HomeIcon} alt={logOutItem.linkText} /> <a href="/">{logOutItem.linkText}</a></li>
+          </div>
+        </div>
+        <div className="view_Movie_Details"></div>
+      </div>
