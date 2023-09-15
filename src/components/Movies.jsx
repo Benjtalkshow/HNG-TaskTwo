@@ -1,7 +1,7 @@
 import React from 'react'
 import {BsChevronRight} from 'react-icons/bs';
 
-import MovieCard from './MovieCard'
+import Cards from './Cards'
 
 
 const Movies = ({ movieList }) => {
@@ -18,7 +18,7 @@ const Movies = ({ movieList }) => {
       <div className='grid grid-cols-2 xl:grid-cols-5 min-h-screen gap-8 p-2 md:p-4'>
         {
           movieList ? movieList.slice(0, 10).map((movie, index) => (
-            <MovieCard key={index} movie={movie} />
+            <Cards key={index} movie={movie} />
           ))
             : 
             <div className="loading text-lg font-bold text-white absolute top-0 left-0 flex justify-center items-center bg-[#be123c] w-full h-full">Loading...</div>

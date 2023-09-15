@@ -7,7 +7,7 @@ import { MdOutlineCalendarMonth, MdMenu } from 'react-icons/md'
 import ReactPlayer from 'react-player/youtube'
 
 
-const Details = () => {
+const MovieDetails = () => {
     const navigate = useNavigate()
     const delay = () => {
         navigate("*");
@@ -159,4 +159,4 @@ const Details = () => {
     )
 }
 
-export default Details;
+export default MovieDetails;

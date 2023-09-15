@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import imdb from '../assets/imdb.png';
 import tomato from '../assets/tomato.png';
 
-const MovieCard = ({ movie }) => {
+const Cards = ({ movie }) => {
 
     const number = movie.vote_average * 10;
     const getRandomNumber = () => {
@@ -42,4 +42,4 @@ const MovieCard = ({ movie }) => {
     )
 }
 
-export default MovieCard
+export default Cards;

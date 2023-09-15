@@ -1,75 +1,95 @@
-# TMDB Movie App
+TMDB Movie App
+==============
 
-TMDB Movie App is a dynamic movie application that fetches movie data from The Movie Database (TMDb) API. It allows users to explore a vast collection of movies, view details, and search for their favorite films.
+The TMDB Movie App is an interactive movie application that retrieves movie data from The Movie Database (TMDb) API. It empowers users to delve into an extensive movie collection, access comprehensive movie details, and effortlessly search for their preferred films.
 
-## Features
+Notable Features
+----------------
 
-- Browse a vast catalog of movies from TMDb.
-- View detailed information about each movie, including its title, release date, overview, and user ratings.
-- Search for movies by title or keyword.
-- User-friendly and responsive design for a seamless browsing experience on various devices.
+-   Explore an extensive array of movies sourced from TMDb.
+-   Access comprehensive movie details including titles, release dates, synopses, and user ratings.
+-   Perform movie searches by titles or keywords.
+-   Enjoy a user-friendly and responsive design for a seamless browsing experience across various devices.
 
-## Getting Started
+Getting Started
+---------------
 
-Follow these instructions to set up and run the TMDB Movie App on your local machine.
+Follow these guidelines to configure and run the TMDB Movie App on your local machine.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) installed on your computer.
+Make sure you have Node.js installed on your computer.
 
 ### Installation
 
-1. Clone the repository:
+1.  Clone the repository:
 
-   ```shell
-   git clone https://github.com/metalekan/TMDB.git
-Navigate to the project directory:
+    shellCopy code
 
-shell
-Copy code
-cd TMDB
-Install dependencies:
+    `git clone https://github.com/Benjtalkshow/HNG-TaskTwo.git`
 
-npm install
-Create a .env file in the project root directory and add your TMDb API key:
+2.  Navigate to the project directory:
 
-plaintext
-Copy code
-REACT_APP_TMDB_API_KEY=your_api_key_here
-Replace your_api_key_here with your actual TMDb API key.
+    shellCopy code
 
-Usage
-Start the development server:
+    `cd HNG_TaskTwo`
 
-shell
-Copy code
-npm start
-Open your web browser and visit http://localhost:3000 to access the application.
+3.  Install project dependencies:
 
-Deployment
-You can deploy this app to platforms like Netlify, Vercel, or GitHub Pages.
+    shellCopy code
 
-Built With
-React - JavaScript library for building user interfaces.
-TMDb API - The Movie Database API for movie data.
-Contributing
-Contributions are welcome! Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests to us.
+    `npm install`
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+4.  Go to `Home.js`, `Details.js` file in the project's src/pages and insert your TMDb API key:
 
-Acknowledgments
-The Movie Database (TMDb) for providing the movie data and API.
-The open-source community for their contributions to the tools and libraries used in this project.
-Contact
-If you have any questions or feedback, feel free to contact us:
+    plaintextCopy code
 
-Email: metadelekan@gmail.com
-GitHub Issues: Project Issues
-css
+    `API_URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=your_api_key_here`
 
+    Replace `your_api_key_here` with your actual TMDb API key.
 
-Make sure to replace the placeholders with your actual project details, and add appropriate content to the `CONTRIBUTING.md` and `LICENSE.md` files if needed. Additionally, provide a screenshot of your app by saving it as `app-screenshot.png` in the project directory.
+### Usage
 
+Initiate the development server:
 
+shellCopy code
 
+`npm start` or `npm run dev`
+
+Open your web browser and access the application at [http://localhost:3000](http://localhost:3000/).
+
+### Deployment
+
+You have the option to deploy this application to platforms like Netlify, Vercel, or GitHub Pages.
+
+Technology Stack
+----------------
+
+-   React: A JavaScript library for crafting user interfaces.
+-   TMDb API: The Movie Database API for accessing movie data.
+
+Contribution
+------------
+
+Contributions to this project are highly encouraged! Please refer to the CONTRIBUTING.md file for details regarding our code of conduct and the procedure for submitting pull requests.
+
+Licensing
+---------
+
+This project operates under the MIT License. For additional information, consult the LICENSE.md file.
+
+Appreciations
+-------------
+
+-   The Movie Database (TMDb) for generously providing movie data and access to their API.
+-   The vibrant open-source community for their invaluable contributions to the tools and libraries applied in this project.
+
+Contact me for future collaboration
+------------
+
+-   Email: <chinedubenj@gmail.com>
+
+Live link
+------------
+
+[https://hng10-task-two.netlify.app/](https://hng10-task-two.netlify.app/)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Page404 = () => {
+const Error404 = () => {
   return (
     <main className='h-screen flex flex-col justify-center p-4'>
         <h1 className='text-gray-800 text-[8rem]'>404</h1>
@@ -14,4 +14,4 @@ const Page404 = () => {
   )
 }
 
-export default Page404
+export default Error404;
