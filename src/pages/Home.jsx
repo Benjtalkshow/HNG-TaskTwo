@@ -183,14 +183,14 @@ const Home = () => {
             <div className="flex gap-x-3">
               <div className="flex gap-1 items-center">
                 <img src={imdb} className="w-[50px]" loading="lazy" />
-                <span className="text-sm sm:text-md">{randomMovie.popularity}</span>
+                <span className="text-sm sm:text-md">{Math.round(randomMovie.popularity)}</span>
               </div>
               <div className="flex gap-1 items-center">
                 <img src={tomato} className="w-[25px]" loading="lazy" />
                 <span className="text-sm">{randomMovie.vote_average}%</span>
               </div>
             </div>
-            <p className="text-md md:text-[20px]">{randomMovie.overview}</p>
+            <p className="[16px]">{randomMovie.overview}</p>
             <button className="watchTrailerBtn shadow-md  text-white md:text-md flex w-full sm:w-[40%] p-2 gap-x-3 justify-center items-center my-5 bg-custom-dark-Red-Color rounded-lg">
               <img
                 className="watchTrailer w-5 h-5"

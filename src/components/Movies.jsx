@@ -21,7 +21,7 @@ const Movies = ({ movieList }) => {
             .slice(0, 10)
             .map((movie, index) => <Cards key={index} movie={movie} />)
         ) : (
-          <div className="loading text-lg font-bold text-white absolute top-0 left-0 flex justify-center items-center bg-[#be123c] w-full h-full">
+          <div className="loading text-lg font-bold text-white absolute top-0 left-0 flex justify-center items-center bg-[#be123c] w-full h-[100v]">
             Loading...
           </div>
         )}

@@ -193,7 +193,7 @@ const MovieDetails = () => {
             </div>
           </div>
         ) : (
-          <div className="loading text-lg font-bold text-white absolute top-0 left-0 flex justify-center items-center bg-[#be123c] w-full h-full">
+          <div className="loading  text-lg font-bold text-white absolute top-0 left-0 flex justify-center items-center bg-[#be123c] w-full h-full">
             Loading...
           </div>
         )}
