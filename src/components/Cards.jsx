@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import imdb from "../assets/imdb.png";
 import tomato from "../assets/tomato.png";
 
 const Cards = ({ movie }) => {
   const number = movie.vote_average * 10;
-  const getRandomNumber = () => {
-    const randomNumber = Math.random();
 
-    const min = 70;
-    const max = 90;
-    const scaledNumber = min + randomNumber * (max - min + 1);
+  // State to track whether the heart icon is filled (yellow) or not (white)
+  const [isHeartFilled, setIsHeartFilled] = useState(false);
 
-    return Math.floor(scaledNumber);
+  // State to store the randomNum
+  const [randomNum, setRandomNum] = useState(null);
+
+  // Function to toggle the heart icon's color
+  const toggleHeartColor = (e) => {
+    e.preventDefault();
+    setIsHeartFilled(!isHeartFilled);
   };
-  const randomNum = getRandomNumber();
+
+  // Effect to generate randomNum once when the component is mounted
+  useEffect(() => {
+    const getRandomNumber = () => {
+      const randomNumber = Math.random();
+      const min = 70;
+      const max = 90;
+      const scaledNumber = min + randomNumber * (max - min + 1);
+      return Math.floor(scaledNumber);
+    };
+
+    // Generate randomNum and set it in the state
+    const generatedRandomNum = getRandomNumber();
+    setRandomNum(generatedRandomNum);
+  }, []);
 
   return (
     <Link to={`/${movie.id}`}>
@@ -54,6 +72,13 @@ const Cards = ({ movie }) => {
             </div>
           </div>
         </div>
+        <FontAwesomeIcon
+          icon={faHeart}
+          className={`cursor-pointer ${
+            isHeartFilled ? "text-white" : "text-yellow-300"
+          } text-2xl absolute top-2 right-2`}
+          onClick={toggleHeartColor}
+        />
       </div>
     </Link>
   );

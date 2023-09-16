@@ -41,12 +41,14 @@ const Home = () => {
   };
 
   const searchMovie = async () => {
-    if (searchedMovie == "") {
+    if (searchedMovie === "") {
       errorCheck();
       fetchMovie();
     } else if (searchedMovie) {
       try {
-        const res = await fetch(`${API_SEARCH}=${searchedMovie}`);
+        const res = await fetch(
+          `${API_SEARCH}?api_key=7f23fe1838341209abe18781249c152f&query=${searchedMovie}`
+        );
         const data = await res.json();
         setMovieList(data.results);
         setTimeout(() => {
@@ -130,6 +132,7 @@ const Home = () => {
                   setSearchedMovie(event.target.value.toLowerCase());
                 }}
               />
+
               <HiSearch
                 className="icon cursor-pointer "
                 onClick={searchMovie}
@@ -183,7 +186,9 @@ const Home = () => {
             <div className="flex gap-x-3">
               <div className="flex gap-1 items-center">
                 <img src={imdb} className="w-[50px]" loading="lazy" />
-                <span className="text-sm sm:text-md">{Math.round(randomMovie.popularity)}</span>
+                <span className="text-sm sm:text-md">
+                  {Math.round(randomMovie.popularity)}
+                </span>
               </div>
               <div className="flex gap-1 items-center">
                 <img src={tomato} className="w-[25px]" loading="lazy" />
