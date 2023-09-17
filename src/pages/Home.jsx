@@ -18,8 +18,8 @@ const Home = () => {
     navigate("*");
   };
 
-  const API_URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=7f23fe1838341209abe18781249c152f`;
-  const API_SEARCH = `https://api.themoviedb.org/3/search/movie?api_key=7f23fe1838341209abe18781249c152f`;
+  const API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=7f23fe1838341209abe18781249c152f`;
+  const API_SEARCH = `https://api.themoviedb.org/3/movie/top_rated?api_key=7f23fe1838341209abe18781249c152f`;
 
   const [movieList, setMovieList] = useState("");
   const [searchedMovie, setSearchedMovie] = useState("");
@@ -115,7 +115,7 @@ const Home = () => {
           }}
         >
           <div className="absolute inset-0 bg-black opacity-40"></div>
-          <nav className="flex items-center justify-between md:justify-around text-white relative">
+          <nav className="flex z-20 items-center justify-between md:justify-around text-white relative">
             <div className="logo flex items-center md:gap-2 md:basis-1/4">
               <img src={logo} alt="Movie Box Logo" />
 

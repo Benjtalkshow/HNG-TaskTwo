@@ -53,7 +53,7 @@ const Cards = ({ movie }) => {
             className="text-gray-800 text-[12px]"
             data-testid="movie-release-date"
           >
-            {movie.release_date}
+            {new Date(movie.release_date).toUTCString()}
           </span>
           <span
             className="text-gray-900 text-sm md:text-md font-semibold"
@@ -67,16 +67,20 @@ const Cards = ({ movie }) => {
               <span className="text-[10px]">{number.toFixed(1)} / 100</span>
             </div>
             <div className="flex items-center gap-1">
-              <img src={tomato} className="w-[16px] h-[16px]" loading="lazy" />
+              <img
+                src={tomato}
+                className="w-[16px] h-[16px]"
+                loading="lazy"
+              />
               <span className="text-[10px]">{randomNum}%</span>
             </div>
           </div>
         </div>
         <FontAwesomeIcon
           icon={faHeart}
-          className={`cursor-pointer ${
+          className={`cursor-pointer drop-shadow-md ${
             isHeartFilled ? "text-white" : "text-yellow-300"
-          } text-2xl absolute top-2 right-2`}
+          } text-2xl absolute top-6 right-9`}
           onClick={toggleHeartColor}
         />
       </div>
